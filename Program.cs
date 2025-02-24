@@ -1,11 +1,14 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MovieStore.Models.Domain;
+using MovieStore.Repositories.Implementation;
+using MovieStore.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
 
 //Registerd dbcontext
 builder.Services.AddDbContext<ApplicationDbContext>(options => 
