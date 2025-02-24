@@ -2,7 +2,7 @@
 
 namespace MovieStore.Models.DTOs
 {
-    public class Registration
+    public class RegistrationModel
     {
         [Required]
         public string Name { get; set; }
